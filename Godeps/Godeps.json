@@ -1,0 +1,5 @@
+{
+	"ImportPath": "sshd_honey_web",
+	"GoVersion": "go1.3",
+	"Deps": []
+}
