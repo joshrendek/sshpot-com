@@ -1,0 +1,19 @@
+<h1>Listing Logins</h1>
+
+<table>
+  <thead>
+    <th>Remote Addr</th>
+    <th>Username</th>
+    <th>Password</th>
+  </thead>
+  <tbody>
+  {{range .Logins}}
+  <tr>
+    <td>{{.RemoteAddr}}</td>
+    <td>{{.Username}}</td>
+    <td>{{.Password}}</td>
+  </tr>
+  {{end}}
+
+  </tbody>
+</table>
