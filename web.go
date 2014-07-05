@@ -69,6 +69,8 @@ func ssh(res http.ResponseWriter, req *http.Request) {
 
 func index(res http.ResponseWriter, req *http.Request) {
 	var logins []SshLogin
+	var total int64
+	DB.Model(SshLogin{}).Count(&total)
 	DB.Limit(25).Order("id desc").Find(&logins)
 	t := template.New("ssh login index")
 	view, _ := ioutil.ReadFile("views/index.html")
@@ -76,5 +78,8 @@ func index(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-	err = t.Execute(res, struct{ Logins []SshLogin }{logins})
+	err = t.Execute(res, struct {
+		Logins []SshLogin
+		Total  int64
+	}{logins, total})
 }
