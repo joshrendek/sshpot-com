@@ -31,7 +31,7 @@ func main() {
 	}
 
 	DB.DB().SetMaxIdleConns(10)
-	DB.DB().SetMaxOpenConns(20)
+	DB.DB().SetMaxOpenConns(50)
 	DB.DB().Ping()
 
 	DB.CreateTable(SshLogin{})
