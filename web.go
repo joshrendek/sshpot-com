@@ -17,10 +17,12 @@ var DB gorm.DB
 
 func main() {
 	var err error
-
-	dbString := os.Getenv("HEROKU_POSTGRESQL_BLUE_URL")
+	dbString := os.Getenv("DO_POSTGRESQL")
 	if dbString == "" {
-		dbString = "user=postgres dbname=ssh_honey sslmode=disable"
+		dbString = os.Getenv("HEROKU_POSTGRESQL_BLUE_URL")
+		if dbString == "" {
+			dbString = "user=postgres dbname=ssh_honey sslmode=disable"
+		}
 	}
 	DB, err = gorm.Open("postgres", dbString)
 
