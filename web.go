@@ -37,7 +37,7 @@ func main() {
 	DB.CreateTable(SshLogin{})
 
 	http.HandleFunc("/", index)
-	http.HandleFunc("/api/ssh", ssh)
+	http.HandleFunc("/api/private/ssh", ssh)
 	fmt.Println("listening...")
 
 	port := os.Getenv("PORT")
