@@ -11,10 +11,19 @@
 
 <h3>Instructions</h3>
 
-<h4>1. Clone source for honeypot</h4>
+
+<h4>1. Clone source for honeypot or download binary</h4>
 <pre>
 git clone git@github.com:joshrendek/ssh-passwd-honeypot.git
 </pre>
+
+<p><b>or</b></p>
+
+<pre>
+wget "https://github.com/joshrendek/sshpot-com/releases/download/0.1/sshd_honeypot"
+</pre>
+
+<div> If you downloaded the binary, skip to step #3. </div>
 
 <h4>2. Build the honeypot daemon</h4>
 <div class="alert alert-info">
@@ -31,7 +40,7 @@ make
 
 <h4>3. Install on your server</h4>
 
-<p>SCP the binary AND rsa keys (or you can generate your own, they're just trash keys) to your server.</p>
+<p>SCP the binary to your server (the binary auto-generates SSH keys on startup in the CWD).</p>
 
 <p>Create an upstart (or init.d) file (or copy the example one from the repo) into /etc/init/honeypot.conf</p>
 
