@@ -13,6 +13,9 @@ Use `make deploy` to push it to Heroku.
 
 # TODO
 
+* [ ] init.d script
+* [ ] api usage graphs/page
+* [ ] systemd script
 * [ ] Tests
 * [ ] Log commands executed without executing them
 * [ ] Restrict access to sharing via API keys / auth management
