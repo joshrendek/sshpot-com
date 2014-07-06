@@ -1,14 +1,63 @@
-<html>
-<head>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-</head>
-<body>
+{{template "header.html" .}}
 
-<h1>Listing Logins</h1>
-<h4>Total Logins: {{.Total}}</h4>
+<center>
+  <h3>{{.Total}} Records</h3>
+</center>
 
-<table class="table table-striped">
+<h3>About</h3>
+<div class="well">
+  <a href="http://sshpot.com/">SSHPot.com</a> is a <a href="https://github.com/joshrendek/sshpot-com">open-source</a> web service for receiving data from ssh-pot daemon's, which act as a honeypot for ssh login attempts and records all user/password combinations along with the remote address. In order to run the daemon you must configure OpenSSH to run on a different port and let the honeypot run on port 22.
+</div>
+
+<hr>
+
+<a name="api"></a>
+<h3>API</h3>
+
+
+<h4>GET /api/ssh_logins.json</h4>
+
+<p>
+API to retrieve a list of login attempts, 50 per page.
+</p>
+
+<b>Params</b>
+<ul>
+  <li><b>page</b>: a page offset, default is page 1</li>
+</ul>
+
+
+<b>Example Response</b>
+<pre>
+{
+   "page":1,
+   "total":1171,
+   "data":[
+      {
+         "id":1174,
+         "remote_addr":"183.56.129.146",
+         "username":"carlton",
+         "password":"carlton",
+         "created_at":"2014-07-05T16:32:18.738787-04:00"
+      },
+      {
+         "id":1173,
+         "remote_addr":"116.10.191.166",
+         "username":"admin",
+         "password":"1qaz2wsx!@#",
+         "created_at":"2014-07-05T16:27:38.105188-04:00"
+      }
+   ]
+}
+</pre>
+
+
+<hr>
+
+<a name="last25"></a>
+<h3>Last 25 Logins</h3>
+
+<table class="table table-striped table-condensed">
   <thead>
     <th>Remote Addr</th>
     <th>Username</th>
@@ -26,5 +75,4 @@
   </tbody>
 </table>
 
-</body>
-</html>
+{{template "footer.html" .}}

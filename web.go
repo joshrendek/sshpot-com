@@ -3,11 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"html/template"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"strconv"
+	"text/template"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -39,6 +39,7 @@ func main() {
 	DB.CreateTable(SshLogin{})
 
 	http.HandleFunc("/", index)
+	http.HandleFunc("/join", join)
 	http.HandleFunc("/api/private/ssh", ssh)
 	http.HandleFunc("/api/ssh_logins.json", sshLoginList)
 	fmt.Println("listening...")
@@ -54,18 +55,57 @@ func main() {
 	}
 }
 
+func join(res http.ResponseWriter, req *http.Request) {
+	t, err := template.ParseFiles("views/run.html", "views/header.html")
+	if err != nil {
+		panic(err)
+	}
+	err = t.Execute(res, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
 func sshLoginList(res http.ResponseWriter, req *http.Request) {
 	var logins []SshLogin
+	var page int64
 	var resp []byte
 	var per_page int64 = 50
-	page, err := strconv.ParseInt(req.URL.Query()["page"][0], 10, 64)
-	if err != nil {
-		resp, _ = json.Marshal(struct{ Message string }{"Invalid page parameter"})
-	}
-	fmt.Println(page)
-	DB.Debug().Model(SshLogin{}).Order("id desc").Limit(per_page).Offset(((page * per_page) - per_page)).Find(&logins)
+	var total int64
+	var err error
 
-	resp, _ = json.Marshal(logins)
+	if len(req.URL.Query()["page"]) > 0 {
+		page, err = strconv.ParseInt(req.URL.Query()["page"][0], 10, 64)
+		if err != nil {
+			resp, _ = json.Marshal(struct{ Message string }{"Invalid page parameter"})
+		}
+	} else {
+		page = 1
+	}
+
+	limit_string := strconv.FormatInt(per_page, 10)
+	offset_string := strconv.FormatInt(((page * per_page) - per_page), 10)
+	DB.Order("id desc").Limit(limit_string).Offset(offset_string).Find(&logins)
+	DB.Model(SshLogin{}).Count(&total)
+
+	data := struct {
+		Page  int64      `json:"page"`
+		Total int64      `json:"total"`
+		Data  []SshLogin `json:"data"`
+	}{
+		page,
+		total,
+		logins,
+	}
+
+	resp, err = json.Marshal(data)
+
+	fmt.Println(string(resp))
+
+	if err != nil {
+		fmt.Println(err)
+		resp, _ = json.Marshal(struct{ Message string }{fmt.Sprintf("Invalid json: %s", err)})
+	}
 
 	fmt.Fprintln(res, string(resp))
 }
@@ -93,9 +133,8 @@ func index(res http.ResponseWriter, req *http.Request) {
 	var total int64
 	DB.Model(SshLogin{}).Count(&total)
 	DB.Limit(25).Order("id desc").Find(&logins)
-	t := template.New("ssh login index")
-	view, _ := ioutil.ReadFile("views/index.html")
-	t, err := t.Parse(string(view))
+	//view, _ := ioutil.ReadFile("views/index.html")
+	t, err := template.ParseFiles("views/index.html", "views/header.html")
 	if err != nil {
 		panic(err)
 	}
@@ -103,4 +142,7 @@ func index(res http.ResponseWriter, req *http.Request) {
 		Logins []SshLogin
 		Total  int64
 	}{logins, total})
+	if err != nil {
+		fmt.Println(err)
+	}
 }

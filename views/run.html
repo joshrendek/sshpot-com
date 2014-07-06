@@ -1,0 +1,60 @@
+{{template "header.html" .}}
+
+<center>
+  <h2>Run your own daemon</h2>
+</center>
+
+
+<center>
+  <a href="https://github.com/joshrendek/ssh-passwd-honeypot">Get the source at Github</a>
+</center>
+
+<h3>Instructions</h3>
+
+<h4>1. Clone source for honeypot</h4>
+<pre>
+git clone git@github.com:joshrendek/ssh-passwd-honeypot.git
+</pre>
+
+<h4>2. Build the honeypot daemon</h4>
+<div class="alert alert-info">
+  You must install go with cross-compilation support:
+  <div style="padding-left: 20px;">brew install go --cross-compile-common --with-cgo --use-gcc</div>
+</div>
+
+<pre>
+go get github.com/robertkrimen/gxc/gxc
+make
+</pre>
+
+<p>This produces a binary called <em>sshd_honeypot</em>.</p>
+
+<h4>3. Install on your server</h4>
+
+<p>SCP the binary AND rsa keys (or you can generate your own, they're just trash keys) to your server.</p>
+
+<p>Create an upstart (or init.d) file (or copy the example one from the repo) into /etc/init/honeypot.conf</p>
+
+<b>Example upstart script (replace YOUR_USER with the path to the honeypot executable)</b>
+<script src="https://gist.github.com/joshrendek/89d36036be016e64834c.js"></script>
+
+<h4>4. Change your OpenSSH port</h4>
+
+<p>Edit <em>/etc/ssh/sshd_config</em> and change your port to something else (e.g. 2222). </p>
+
+<div class="alert alert-danger">
+  Make sure you adjust any firewall rules you have in place to allow SSH on the new port
+</div>
+
+Restart SSH.
+<pre>service ssh restart</pre>
+
+<h4>5. Start the honeypot</h4>
+<pre>start honeypot</pre>
+
+<h4>6. Check your logs</h4>
+<p>
+You can check <em>/var/log/upstart/honeypot.log</em> to view startup information, any crash information, and login attempts.
+</p>
+
+{{template "footer.html" .}}
