@@ -76,6 +76,10 @@ func ssh(res http.ResponseWriter, req *http.Request) {
 	} else {
 		remoteAddr = strings.Split(req.RemoteAddr, ":")[0]
 	}
+	fmt.Println("******************** REMOTE HEADERS **********************")
+	fmt.Println(_remote)
+	fmt.Println("******************** /REMOTE HEADERS **********************")
+
 	DB.Where(HoneypotServer{RemoteAddr: remoteAddr}).Assign(HoneypotServer{RemoteAddr: remoteAddr, UpdatedAt: time.Now()}).FirstOrCreate(&honeyPot)
 
 	DB.Save(&login)
