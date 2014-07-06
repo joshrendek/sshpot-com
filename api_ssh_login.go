@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -70,12 +71,13 @@ func ssh(res http.ResponseWriter, req *http.Request) {
 	honeyPot := HoneypotServer{}
 	var remoteAddr string
 	_remote := req.Header["X-Forwarded-For"]
-	//if len(_remote) > 0 {
-	remoteAddr = _remote[len(_remote)-1]
-	fmt.Println(fmt.Sprintf("************* %s", remoteAddr))
-	//} else {
-	//	remoteAddr = strings.Split(req.RemoteAddr, ":")[0]
-	//}
+	if len(_remote) > 0 {
+		tmp := strings.Split(_remote[len(_remote)-1], ",")
+		remoteAddr = tmp[0]
+		fmt.Println(fmt.Sprintf("************* %s", remoteAddr))
+	} else {
+		remoteAddr = strings.Split(req.RemoteAddr, ":")[0]
+	}
 
 	DB.Where(HoneypotServer{RemoteAddr: remoteAddr}).Assign(HoneypotServer{RemoteAddr: remoteAddr, UpdatedAt: time.Now()}).FirstOrCreate(&honeyPot)
 
