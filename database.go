@@ -25,7 +25,8 @@ func SetupDB() {
 	DB.DB().SetMaxIdleConns(10)
 	DB.DB().SetMaxOpenConns(50)
 	DB.DB().Ping()
-	DB.LogMode(true)
+
+	DB.LogMode(false)
 
 	DB.CreateTable(SshLogin{})
 	DB.CreateTable(ApiStat{})
