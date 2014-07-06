@@ -17,6 +17,13 @@ type ApiStat struct {
 	DateKey string
 }
 
+type HoneypotServer struct {
+	Id         int64
+	RemoteAddr string
+	CreatedAt  time.Time
+	UpdatedAt  time.Time
+}
+
 type ApiResponse struct {
 	page  int64      `json:"page"`
 	total int64      `json:"total"`
