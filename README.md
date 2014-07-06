@@ -15,6 +15,7 @@ Use `make deploy` to push it to Heroku.
 
 * [ ] init.d script
 * [ ] api usage graphs/page
+* [ ] Add kippo integration / collection endpoints
 * [ ] systemd script
 * [ ] Tests
 * [ ] Log commands executed without executing them
