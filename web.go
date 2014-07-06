@@ -37,6 +37,7 @@ func main() {
 	DB.LogMode(true)
 
 	DB.CreateTable(SshLogin{})
+	DB.CreateTable(ApiStat{})
 
 	http.HandleFunc("/", index)
 	http.HandleFunc("/join", join)
@@ -66,6 +67,13 @@ func join(res http.ResponseWriter, req *http.Request) {
 	}
 }
 
+func UpdateApiCounters() {
+	key := fmt.Sprintf("%d%d%d", time.Now().Month(), time.Now().Day(), time.Now().Year())
+	stat := ApiStat{}
+	DB.FirstOrCreate(&stat, ApiStat{DateKey: key})
+	DB.Exec("UPDATE api_stats SET counter = counter + 1 WHERE date_key = ?", key)
+}
+
 func sshLoginList(res http.ResponseWriter, req *http.Request) {
 	var logins []SshLogin
 	var page int64
@@ -73,6 +81,8 @@ func sshLoginList(res http.ResponseWriter, req *http.Request) {
 	var per_page int64 = 50
 	var total int64
 	var err error
+
+	UpdateApiCounters()
 
 	if len(req.URL.Query()["page"]) > 0 {
 		page, err = strconv.ParseInt(req.URL.Query()["page"][0], 10, 64)
@@ -99,8 +109,6 @@ func sshLoginList(res http.ResponseWriter, req *http.Request) {
 	}
 
 	resp, err = json.Marshal(data)
-
-	fmt.Println(string(resp))
 
 	if err != nil {
 		fmt.Println(err)

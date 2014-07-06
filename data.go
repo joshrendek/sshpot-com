@@ -11,6 +11,12 @@ type SshLogin struct {
 	DeletedAt  time.Time `json:"-"`
 }
 
+type ApiStat struct {
+	Id      int64
+	Counter int64
+	DateKey string
+}
+
 type ApiResponse struct {
 	page  int64      `json:"page"`
 	total int64      `json:"total"`
