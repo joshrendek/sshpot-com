@@ -72,7 +72,7 @@ func ssh(res http.ResponseWriter, req *http.Request) {
 	var remoteAddr string
 	_remote := req.Header["X-Forwarded-For"]
 	if len(_remote) > 0 {
-		remoteAddr = _remote[len(_remote)-1]
+		remoteAddr = _remote[0]
 	} else {
 		remoteAddr = strings.Split(req.RemoteAddr, ":")[0]
 	}
