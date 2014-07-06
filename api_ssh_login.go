@@ -74,7 +74,6 @@ func ssh(res http.ResponseWriter, req *http.Request) {
 	if len(_remote) > 0 {
 		tmp := strings.Split(_remote[len(_remote)-1], ",")
 		remoteAddr = tmp[0]
-		fmt.Println(fmt.Sprintf("************* %s", remoteAddr))
 	} else {
 		remoteAddr = strings.Split(req.RemoteAddr, ":")[0]
 	}
