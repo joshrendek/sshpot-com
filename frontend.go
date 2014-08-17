@@ -50,18 +50,25 @@ func join(res http.ResponseWriter, req *http.Request) {
 
 func index(res http.ResponseWriter, req *http.Request) {
 	var logins []SshLogin
+	var commands []SshCommand
+	var http_requests []SshHttp
 	var total int64
 	DB.Model(SshLogin{}).Count(&total)
 	DB.Limit(25).Order("id desc").Find(&logins)
+
+	DB.Limit(25).Order("id desc").Find(&http_requests)
+	DB.Limit(25).Order("id desc").Find(&commands)
 	//view, _ := ioutil.ReadFile("views/index.html")
 	t, err := template.ParseFiles("views/index.html", "views/header.html", "views/footer.html")
 	if err != nil {
 		panic(err)
 	}
 	err = t.Execute(res, struct {
-		Logins []SshLogin
-		Total  int64
-	}{logins, total})
+		Logins   []SshLogin
+		Commands []SshCommand
+		Requests []SshHttp
+		Total    int64
+	}{logins, commands, http_requests, total})
 	if err != nil {
 		fmt.Println(err)
 	}

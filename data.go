@@ -11,6 +11,20 @@ type SshLogin struct {
 	DeletedAt  time.Time `json:"-"`
 }
 
+type SshHttp struct {
+	Id        int64     `json:"id"`
+	Request   string    `sql:"type:json;"`
+	CreatedAt time.Time `json:"created_at"`
+	DeletedAt time.Time `json:"-"`
+}
+
+type SshCommand struct {
+	Id        int64     `json:"id"`
+	Command   string    `json:"command"`
+	CreatedAt time.Time `json:"created_at"`
+	DeletedAt time.Time `json:"-"`
+}
+
 type ApiStat struct {
 	Id      int64
 	Counter int64

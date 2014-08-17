@@ -29,6 +29,8 @@ func SetupDB() {
 	DB.LogMode(false)
 
 	DB.CreateTable(SshLogin{})
+	DB.CreateTable(SshHttp{})
+	DB.CreateTable(SshCommand{})
 	DB.CreateTable(ApiStat{})
 	DB.CreateTable(HoneypotServer{})
 
