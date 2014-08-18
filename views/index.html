@@ -1,8 +1,22 @@
 {{template "header.html" .}}
 
-<center>
-  <h3>{{.Total}} Records</h3>
-</center>
+<div class="row">
+  <div class="col-lg-4">
+    <center>
+      <h3>{{.Total}} Records</h3>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <h3>{{.CommandTotal}} Commands</h3>
+    </center>
+  </div>
+  <div class="col-lg-4">
+    <center>
+      <h3>{{.ProxyTotal}} Proxy Requests</h3>
+    </center>
+  </div>
+</div>
 
 <h3>About</h3>
 <div class="well">

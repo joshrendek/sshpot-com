@@ -53,22 +53,31 @@ func index(res http.ResponseWriter, req *http.Request) {
 	var commands []SshCommand
 	var http_requests []SshHttp
 	var total int64
-	DB.Model(SshLogin{}).Count(&total)
+	var command_total int64
+	var proxy_total int64
+
 	DB.Limit(25).Order("id desc").Find(&logins)
 
 	DB.Limit(25).Order("id desc").Find(&http_requests)
 	DB.Limit(25).Order("id desc").Find(&commands)
+
+	DB.Model(SshLogin{}).Count(&total)
+	DB.Model(SshCommand{}).Count(&command_total)
+	DB.Model(SshHttp{}).Count(&proxy_total)
+
 	//view, _ := ioutil.ReadFile("views/index.html")
 	t, err := template.ParseFiles("views/index.html", "views/header.html", "views/footer.html")
 	if err != nil {
 		panic(err)
 	}
 	err = t.Execute(res, struct {
-		Logins   []SshLogin
-		Commands []SshCommand
-		Requests []SshHttp
-		Total    int64
-	}{logins, commands, http_requests, total})
+		Logins       []SshLogin
+		Commands     []SshCommand
+		Requests     []SshHttp
+		Total        int64
+		CommandTotal int64
+		Proxytotal   int64
+	}{logins, commands, http_requests, total, command_total, proxy_total})
 	if err != nil {
 		fmt.Println(err)
 	}
