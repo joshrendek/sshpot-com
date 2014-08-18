@@ -11,6 +11,10 @@ Use `make` to build the binary.
 
 Use `make deploy` to push it to Heroku.
 
+# Done
+* [x] Log commands executed without executing them
+* [x] Log proxy requests made with direct-tcpip channel types
+
 # TODO
 
 * [ ] init.d script
@@ -18,7 +22,6 @@ Use `make deploy` to push it to Heroku.
 * [ ] Add kippo integration / collection endpoints
 * [ ] systemd script
 * [ ] Tests
-* [ ] Log commands executed without executing them
 * [ ] Restrict access to sharing via API keys / auth management
 
 
