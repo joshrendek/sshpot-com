@@ -76,7 +76,7 @@ func index(res http.ResponseWriter, req *http.Request) {
 		Requests     []SshHttp
 		Total        int64
 		CommandTotal int64
-		Proxytotal   int64
+		ProxyTotal   int64
 	}{logins, commands, http_requests, total, command_total, proxy_total})
 	if err != nil {
 		fmt.Println(err)
