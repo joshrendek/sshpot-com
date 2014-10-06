@@ -24,7 +24,10 @@ func SetupDB() {
 
 	DB.DB().SetMaxIdleConns(10)
 	DB.DB().SetMaxOpenConns(50)
-	DB.DB().Ping()
+	err = DB.DB().Ping()
+	if err != nil {
+		panic(err)
+	}
 
 	DB.LogMode(false)
 
