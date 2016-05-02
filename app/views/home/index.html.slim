@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-lg-6
+      h3 Logins by Day
+      = column_chart logins_by_day_home_index_path, library: { backgroundColor: '#000000', vAxis: { gridlines: { color: '#212121' } } }
+    .col-lg-6
+      h3 Logins By Country (past month)
+      = geo_chart logins_by_country_home_index_path, library: { backgroundColor: '#000000' }
+
+= render 'logins/latest'

@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-lg-6
+      h3 Top 25 Attackers
+      = render 'login_counter/top', logins: LoginCount.top
+      h3 Latest 25 Logins
+      = render 'logins/list', logins: Login.latest
+    .col-lg-6
+      h3 Last 25 Sessions
+      = render 'logins/latest_sessions', logins: Login.latest_sessions

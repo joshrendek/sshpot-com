@@ -1,0 +1,25 @@
+table.table.table-striped.table-condensed
+  thead
+    th Username
+    th Password
+    th Commands
+    th Type
+    th IP
+    th Country
+    th Client Version
+    th Date
+  tbody
+    - logins.each do |login|
+      tr
+        td = link_to login.username, logins_path(username: login.username)
+        td = login.password
+        td = login.commands.count
+        td
+          - if login.login_type == 'key'
+            i.glyphicon.glyphicon-lock(alt='Key')
+          - else
+            i.glyphicon.glyphicon-user(alt='Login')
+        td = link_to login.remote_addr, logins_path(ip: login.remote_addr)
+        td = login.country_name
+        td = link_to login.version, logins_path(client: login.version)
+        td = login.created_at.strftime("%Y/%m/%d %H:%M")

@@ -1,30 +1,48 @@
-This is the web service in Go that powers http://sshpot.com/ - it runs on Heroku.
+Sshpot
+================
 
-# Local development
-Use gin to get automatic reload while developing
+This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
+provided by the [RailsApps Project](http://railsapps.github.io/).
 
-```
-gin --port 4040 -a '9090'
-```
+Rails Composer is supported by developers who purchase our RailsApps tutorials.
 
-Use `make` to build the binary.
+Problems? Issues?
+-----------
 
-Use `make deploy` to push it to Heroku.
+Need help? Ask on Stack Overflow with the tag 'railsapps.'
 
-# Done
-* [x] Log commands executed without executing them
-* [x] Log proxy requests made with direct-tcpip channel types
+Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
 
-# TODO
+If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
+and include the diagnostics.
 
-* [ ] init.d script
-* [ ] api usage graphs/page
-* [ ] Add kippo integration / collection endpoints
-* [ ] systemd script
-* [ ] Tests
-* [ ] Restrict access to sharing via API keys / auth management
+Ruby on Rails
+-------------
 
+This application requires:
 
-# License
+- Ruby 2.1.2
+- Rails 4.2.6
 
-See LICENSE file
+Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+
+Getting Started
+---------------
+
+Documentation and Support
+-------------------------
+
+Issues
+-------------
+
+Similar Projects
+----------------
+
+Contributing
+------------
+
+Credits
+-------
+
+License
+-------

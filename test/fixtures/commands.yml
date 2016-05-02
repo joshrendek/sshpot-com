@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  command: MyText
+  guid: MyString
+  login_id: 
+
+two:
+  command: MyText
+  guid: MyString
+  login_id: 

@@ -1,0 +1,2 @@
+pre
+  = commands.where.not(command: '').pluck(:command).join("\n")

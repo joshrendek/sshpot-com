@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  remote_addr: 
+  remote_port: 
+  username: MyString
+  password: MyString
+  guid: MyString
+  version: MyString
+  public_key: MyString
+  key_type: MyString
+  login_type: MyString
+
+two:
+  remote_addr: 
+  remote_port: 
+  username: MyString
+  password: MyString
+  guid: MyString
+  version: MyString
+  public_key: MyString
+  key_type: MyString
+  login_type: MyString

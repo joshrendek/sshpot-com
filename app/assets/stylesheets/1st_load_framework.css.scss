@@ -1,0 +1,86 @@
+// import the CSS framework
+
+$body-bg: #000 !important;
+$text-color: #fff;
+$link-color: #75bcfc;
+$panel-bg: #252525;
+$panel-inner-border: #111 !default;
+$panel-default-border: $panel-inner-border;
+$panel-default-text: #fff;
+$panel-default-heading-bg: #212121;
+$table-border-color: $panel-inner-border;
+$table-bg-accent: #191919;
+$pre-bg: #000;
+$pre-color: green;
+$pre-border-color: #111;
+$pagination-bg: #111;
+$pagination-border: #212121;
+
+
+hide {
+  display: none;
+  visibility: hidden;
+}
+
+.navbar-brand {
+  font-family: 'Press Start 2P', cursive !important;
+}
+
+pre {
+  max-height: 250px;
+  scroll: auto;
+  overflow: overflow-y;
+}
+
+table thead th {
+  background-color: $panel-default-heading-bg;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// make all images responsive by default
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+}
+// override for the 'Home' navigation link
+.navbar-brand {
+  font-size: inherit;
+}
+
+// THESE ARE EXAMPLES YOU CAN MODIFY
+// create your own classes
+// to make views framework-neutral
+.column {
+  @extend .col-md-6;
+  @extend .text-center;
+}
+.form {
+  @extend .col-md-6;
+}
+.form-centered {
+  @extend .col-md-6;
+  @extend .text-center;
+}
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+}
+// apply styles to HTML elements
+// to make views framework-neutral
+main {
+  @extend .container-fluid;
+  padding-bottom: 80px;
+  width: 100%;
+  margin-top: 51px; // accommodate the navbar
+}
+section {
+  @extend .row;
+  margin-top: 20px;
+}
+
+.container {
+  width: 100% !important;
+}

@@ -1,0 +1,98 @@
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">404
+                <small>Page Not Found</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><%= link_to 'Home', root_path %>
+                </li>
+                <li class="active">404</li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="jumbotron">
+                <h1><span class="error-404">404</span>
+                </h1>
+                <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+                <ul>
+                    <li>
+                        <%= link_to 'Home', root_path %>
+                    </li>
+                    <li>
+                        <%= link_to 'About', page_path('about') %>
+                    </li>
+                    <li>
+                        <%= link_to 'Services', page_path('services') %>
+                    </li>
+                    <li>
+                        <%= link_to 'Contact', page_path('contact') %>
+                    </li>
+                    <li>
+                        Portfolio
+                        <ul>
+                            <li>
+                              <%= link_to '1 Column Portfolio', page_path('portfolio-1-col') %>
+                            </li>
+                            <li>
+                              <%= link_to '2 Column Portfolio', page_path('portfolio-2-col') %>
+                            </li>
+                            <li>
+                              <%= link_to '3 Column Portfolio', page_path('portfolio-3-col') %>
+                            </li>
+                            <li>
+                              <%= link_to '4 Column Portfolio', page_path('portfolio-4-col') %>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Blog
+                        <ul>
+                            <li>
+                              <%= link_to 'Blog Home 1', page_path('blog-home-1') %>
+                            </li>
+                            <li>
+                              <%= link_to 'Blog Home 2', page_path('blog-home-2') %>
+                            </li>
+                            <li>
+                              <%= link_to 'Blog Post', page_path('blog-post') %>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Other Pages
+                        <ul>
+                            <li>
+                              <%= link_to 'Full Width Page', page_path('full-width') %>
+                            </li>
+                            <li>
+                              <%= link_to 'Sidebar Page', page_path('sidebar') %>
+                            </li>
+                            <li>
+                              <%= link_to 'FAQ', page_path('faq') %>
+                            </li>
+                            <li>
+                              <%= link_to '404', page_path('404') %>
+                            </li>
+                            <li>
+                              <%= link_to 'Pricing Table', page_path('pricing') %>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->
+
