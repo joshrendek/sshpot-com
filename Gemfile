@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.3.0'
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -26,6 +26,9 @@ gem 'simple_form'
 gem 'slim-rails'
 group :development do
   gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rails', '~> 1.1'
   gem 'better_errors'
   gem 'binding_of_caller', platforms: [:mri_21]
   gem 'quiet_assets'

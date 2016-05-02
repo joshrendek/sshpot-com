@@ -62,7 +62,16 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
+    capistrano-bundler (1.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     capistrano-harrow (0.4.0)
+    capistrano-rails (1.1.0)
+      capistrano (>= 3.0.0)
+      capistrano-bundler (>= 1.0.0)
+    capistrano3-puma (1.2.1)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     chartkick (1.4.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
@@ -219,6 +228,9 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capistrano
+  capistrano-bundler (~> 1.1.2)
+  capistrano-rails (~> 1.1)
+  capistrano3-puma
   chartkick
   coffee-rails (~> 4.1.0)
   geoip
@@ -240,9 +252,3 @@ DEPENDENCIES
   spring
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-
-RUBY VERSION
-   ruby 2.1.2p95
-
-BUNDLED WITH
-   1.12.1
