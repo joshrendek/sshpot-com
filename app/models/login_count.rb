@@ -1,7 +1,7 @@
 class LoginCount < ActiveRecord::Base
 
   def self.top
-    order(count: :desc).limit(25)
+    order(count: :desc).limit(10)
   end
 
   def sessions

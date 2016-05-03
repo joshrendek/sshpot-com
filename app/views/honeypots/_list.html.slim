@@ -1,11 +1,11 @@
 table.table.table-striped.table-condensed
   thead
     th Location
-    th GUID
+    th IP
     th Logins
   tbody
     - honeypots.each do |hp|
       tr
         td = hp.country_name
-        td = hp.guid
+        td = "x.x.x.#{hp.ip.to_s.split('.')[-1]}"
         td = hp.logins
