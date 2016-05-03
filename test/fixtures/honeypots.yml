@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ip: 
+  guid: MyString
+  logins: 1
+  country_name: MyString
+
+two:
+  ip: 
+  guid: MyString
+  logins: 1
+  country_name: MyString

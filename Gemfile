@@ -28,7 +28,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rails', '~> 1.1.3'
   gem 'better_errors'
   gem 'binding_of_caller', platforms: [:mri_21]
   gem 'quiet_assets'

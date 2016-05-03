@@ -11,7 +11,7 @@ set :deploy_to, '/home/app'
 # set :log_level, :debug
 # set :pty, true
 
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
