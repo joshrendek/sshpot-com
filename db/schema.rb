@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502024147) do
+ActiveRecord::Schema.define(version: 20160503020704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20160502024147) do
 
   add_index "commands", ["command"], name: "index_commands_on_command", using: :btree
   add_index "commands", ["guid"], name: "index_commands_on_guid", using: :btree
+
+  create_table "honeypots", force: :cascade do |t|
+    t.inet     "ip"
+    t.string   "guid"
+    t.integer  "logins"
+    t.string   "country_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "login_counts", force: :cascade do |t|
     t.inet     "ip"

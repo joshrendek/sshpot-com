@@ -6,5 +6,7 @@
       h3 Latest 25 Logins
       = render 'logins/list', logins: Login.latest
     .col-lg-6
+      h3 Top 10 Honeypots
+      = render 'honeypots/list', honeypots: Honeypot.top
       h3 Last 25 Sessions
       = render 'logins/latest_sessions', logins: Login.latest_sessions
