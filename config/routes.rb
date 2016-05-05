@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :api do
+  get 'http_request/create'
+  end
+
   resources :logins
 
   resources :home do
@@ -11,6 +15,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :commands
     resources :logins
+    resources :http_requests
   end
   root to: 'home#index'
 end

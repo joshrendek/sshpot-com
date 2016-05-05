@@ -1,6 +1,7 @@
 class Login < ActiveRecord::Base
   paginates_per 25
   has_many :commands, foreign_key: 'guid', primary_key: 'guid'
+  has_many :http_requests, foreign_key: 'guid', primary_key: 'guid'
 
   before_create :geolocate
 

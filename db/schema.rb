@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503020704) do
+ActiveRecord::Schema.define(version: 20160505025835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 20160503020704) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "http_requests", force: :cascade do |t|
+    t.string   "headers",    default: [],              array: true
+    t.string   "url"
+    t.string   "hostname"
+    t.string   "formdata",   default: [],              array: true
+    t.string   "method"
+    t.string   "guid"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "http_requests", ["guid"], name: "index_http_requests_on_guid", using: :btree
+  add_index "http_requests", ["hostname"], name: "index_http_requests_on_hostname", using: :btree
+  add_index "http_requests", ["method"], name: "index_http_requests_on_method", using: :btree
+  add_index "http_requests", ["url"], name: "index_http_requests_on_url", using: :btree
 
   create_table "login_counts", force: :cascade do |t|
     t.inet     "ip"

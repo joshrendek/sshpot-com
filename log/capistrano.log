@@ -4676,3 +4676,263 @@ Bundler Error Backtrace:
  DEBUG [d1ce6d37] 	Command restart sent success
  DEBUG [d1ce6d37] 	
   INFO [d1ce6d37] Finished in 0.771 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-05-03 13:28:28 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [16fb8a60] Running /usr/bin/env mkdir -p /tmp/sshpot/ as app@107.191.39.44
+ DEBUG [16fb8a60] Command: /usr/bin/env mkdir -p /tmp/sshpot/
+  INFO [16fb8a60] Finished in 0.838 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/sshpot/git-ssh.sh 0.0%
+  INFO Uploading /tmp/sshpot/git-ssh.sh 100.0%
+  INFO [2dc802b3] Running /usr/bin/env chmod +rx /tmp/sshpot/git-ssh.sh as app@107.191.39.44
+ DEBUG [2dc802b3] Command: /usr/bin/env chmod +rx /tmp/sshpot/git-ssh.sh
+  INFO [2dc802b3] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [ac05ac19] Running /usr/bin/env git ls-remote --heads git@github.com:joshrendek/sshpot-com.git as app@107.191.39.44
+ DEBUG [ac05ac19] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/sshpot/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:joshrendek/sshpot-com.git )
+ DEBUG [ac05ac19] 	Warning: Permanently added the RSA host key for IP address '192.30.252.122' to the list of known hosts.
+ DEBUG [ac05ac19] 	86e8c9dfae20625aad4bb3a085caa3bef7fc35a4	refs/heads/master
+  INFO [ac05ac19] Finished in 0.550 seconds with exit status 0 (successful).
+  INFO [3a15cdf7] Running /usr/bin/env mkdir -p /home/app/shared /home/app/releases as app@107.191.39.44
+ DEBUG [3a15cdf7] Command: /usr/bin/env mkdir -p /home/app/shared /home/app/releases
+  INFO [3a15cdf7] Finished in 0.150 seconds with exit status 0 (successful).
+  INFO [6fc41ee7] Running /usr/bin/env mkdir -p /home/app/shared/bin /home/app/shared/log /home/app/shared/tmp/pids /home/app/shared/tmp/cache /home/app/shared/tmp/sockets /home/app/shared/vendor/bundle /home/app/shared/public/system /home/app/shared/public/assets as app@107.191.39.44
+ DEBUG [6fc41ee7] Command: /usr/bin/env mkdir -p /home/app/shared/bin /home/app/shared/log /home/app/shared/tmp/pids /home/app/shared/tmp/cache /home/app/shared/tmp/sockets /home/app/shared/vendor/bundle /home/app/shared/public/system /home/app/shared/public/assets
+  INFO [6fc41ee7] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [0d851462] Running /usr/bin/env mkdir -p /home/app/shared/config as app@107.191.39.44
+ DEBUG [0d851462] Command: /usr/bin/env mkdir -p /home/app/shared/config
+  INFO [0d851462] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [e36d52e8] Running [ -f /home/app/shared/config/database.yml ] as app@107.191.39.44
+ DEBUG [e36d52e8] Command: [ -f /home/app/shared/config/database.yml ]
+ DEBUG [e36d52e8] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG [a88a5e57] Running [ -f /home/app/shared/config/secrets.yml ] as app@107.191.39.44
+ DEBUG [a88a5e57] Command: [ -f /home/app/shared/config/secrets.yml ]
+ DEBUG [a88a5e57] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG [c5e6937b] Running [ -f /home/app/shared/puma.rb ] as app@107.191.39.44
+ DEBUG [c5e6937b] Command: [ -f /home/app/shared/puma.rb ]
+ DEBUG [c5e6937b] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG [bfdc42fa] Running [ -f /home/app/current/REVISION ] as app@107.191.39.44
+ DEBUG [bfdc42fa] Command: [ -f /home/app/current/REVISION ]
+ DEBUG [bfdc42fa] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [0c7385e1] Running /usr/bin/env cat /home/app/current/REVISION 2>/dev/null as app@107.191.39.44
+ DEBUG [0c7385e1] Command: /usr/bin/env cat /home/app/current/REVISION 2>/dev/null
+ DEBUG [0c7385e1] 	01590ce37a1a14bae35b66a698818c1db70df122
+ DEBUG [0c7385e1] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [622925b8] Running [ -f /home/app/repo/HEAD ] as app@107.191.39.44
+ DEBUG [622925b8] Command: [ -f /home/app/repo/HEAD ]
+ DEBUG [622925b8] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/app/repo
+ DEBUG [7036957f] Running if test ! -d /home/app/repo; then echo "Directory does not exist '/home/app/repo'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [7036957f] Command: if test ! -d /home/app/repo; then echo "Directory does not exist '/home/app/repo'" 1>&2; false; fi
+ DEBUG [7036957f] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO [cbf52520] Running /usr/bin/env git remote update --prune as app@107.191.39.44
+ DEBUG [cbf52520] Command: cd /home/app/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/sshpot/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [cbf52520] 	Fetching origin
+ DEBUG [cbf52520] 	From github.com:joshrendek/sshpot-com
+   01590ce..86e8c9d  master     -> master
+  INFO [cbf52520] Finished in 0.610 seconds with exit status 0 (successful).
+ DEBUG [9a3aaece] Running if test ! -d /home/app/repo; then echo "Directory does not exist '/home/app/repo'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [9a3aaece] Command: if test ! -d /home/app/repo; then echo "Directory does not exist '/home/app/repo'" 1>&2; false; fi
+ DEBUG [9a3aaece] Finished in 0.149 seconds with exit status 0 (successful).
+  INFO [317d282b] Running /usr/bin/env mkdir -p /home/app/releases/20160503172831 as app@107.191.39.44
+ DEBUG [317d282b] Command: cd /home/app/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/sshpot/git-ssh.sh" ; /usr/bin/env mkdir -p /home/app/releases/20160503172831 )
+  INFO [317d282b] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [ab62c5b8] Running /usr/bin/env git archive master | tar -x -f - -C /home/app/releases/20160503172831 as app@107.191.39.44
+ DEBUG [ab62c5b8] Command: cd /home/app/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/sshpot/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/app/releases/20160503172831 )
+  INFO [ab62c5b8] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [c894cc82] Running if test ! -d /home/app/repo; then echo "Directory does not exist '/home/app/repo'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [c894cc82] Command: if test ! -d /home/app/repo; then echo "Directory does not exist '/home/app/repo'" 1>&2; false; fi
+ DEBUG [c894cc82] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [63922ef6] Running /usr/bin/env git rev-list --max-count=1 master as app@107.191.39.44
+ DEBUG [63922ef6] Command: cd /home/app/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/sshpot/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [63922ef6] 	86e8c9dfae20625aad4bb3a085caa3bef7fc35a4
+ DEBUG [63922ef6] Finished in 0.103 seconds with exit status 0 (successful).
+ DEBUG [d26735e9] Running if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [d26735e9] Command: if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi
+ DEBUG [d26735e9] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [4e50f876] Running /usr/bin/env echo "86e8c9dfae20625aad4bb3a085caa3bef7fc35a4" >> REVISION as app@107.191.39.44
+ DEBUG [4e50f876] Command: cd /home/app/releases/20160503172831 && /usr/bin/env echo "86e8c9dfae20625aad4bb3a085caa3bef7fc35a4" >> REVISION
+  INFO [4e50f876] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [71bae370] Running /usr/bin/env mkdir -p /home/app/releases/20160503172831/config as app@107.191.39.44
+ DEBUG [71bae370] Command: /usr/bin/env mkdir -p /home/app/releases/20160503172831/config
+  INFO [71bae370] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [c7cecc65] Running [ -L /home/app/releases/20160503172831/config/database.yml ] as app@107.191.39.44
+ DEBUG [c7cecc65] Command: [ -L /home/app/releases/20160503172831/config/database.yml ]
+ DEBUG [c7cecc65] Finished in 0.099 seconds with exit status 1 (failed).
+ DEBUG [976ead73] Running [ -f /home/app/releases/20160503172831/config/database.yml ] as app@107.191.39.44
+ DEBUG [976ead73] Command: [ -f /home/app/releases/20160503172831/config/database.yml ]
+ DEBUG [976ead73] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [34d09f2c] Running /usr/bin/env rm /home/app/releases/20160503172831/config/database.yml as app@107.191.39.44
+ DEBUG [34d09f2c] Command: /usr/bin/env rm /home/app/releases/20160503172831/config/database.yml
+  INFO [34d09f2c] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [152e83e0] Running /usr/bin/env ln -s /home/app/shared/config/database.yml /home/app/releases/20160503172831/config/database.yml as app@107.191.39.44
+ DEBUG [152e83e0] Command: /usr/bin/env ln -s /home/app/shared/config/database.yml /home/app/releases/20160503172831/config/database.yml
+  INFO [152e83e0] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [9bf45c6b] Running [ -L /home/app/releases/20160503172831/config/secrets.yml ] as app@107.191.39.44
+ DEBUG [9bf45c6b] Command: [ -L /home/app/releases/20160503172831/config/secrets.yml ]
+ DEBUG [9bf45c6b] Finished in 0.099 seconds with exit status 1 (failed).
+ DEBUG [f0bba65a] Running [ -f /home/app/releases/20160503172831/config/secrets.yml ] as app@107.191.39.44
+ DEBUG [f0bba65a] Command: [ -f /home/app/releases/20160503172831/config/secrets.yml ]
+ DEBUG [f0bba65a] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [dadf621d] Running /usr/bin/env rm /home/app/releases/20160503172831/config/secrets.yml as app@107.191.39.44
+ DEBUG [dadf621d] Command: /usr/bin/env rm /home/app/releases/20160503172831/config/secrets.yml
+  INFO [dadf621d] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [720a7ebe] Running /usr/bin/env ln -s /home/app/shared/config/secrets.yml /home/app/releases/20160503172831/config/secrets.yml as app@107.191.39.44
+ DEBUG [720a7ebe] Command: /usr/bin/env ln -s /home/app/shared/config/secrets.yml /home/app/releases/20160503172831/config/secrets.yml
+  INFO [720a7ebe] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [e10263b9] Running /usr/bin/env mkdir -p /home/app/releases/20160503172831 /home/app/releases/20160503172831/tmp /home/app/releases/20160503172831/vendor /home/app/releases/20160503172831/public as app@107.191.39.44
+ DEBUG [e10263b9] Command: /usr/bin/env mkdir -p /home/app/releases/20160503172831 /home/app/releases/20160503172831/tmp /home/app/releases/20160503172831/vendor /home/app/releases/20160503172831/public
+  INFO [e10263b9] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [9dc0ef51] Running [ -L /home/app/releases/20160503172831/bin ] as app@107.191.39.44
+ DEBUG [9dc0ef51] Command: [ -L /home/app/releases/20160503172831/bin ]
+ DEBUG [9dc0ef51] Finished in 0.100 seconds with exit status 1 (failed).
+ DEBUG [c358251e] Running [ -d /home/app/releases/20160503172831/bin ] as app@107.191.39.44
+ DEBUG [c358251e] Command: [ -d /home/app/releases/20160503172831/bin ]
+ DEBUG [c358251e] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [ac174981] Running /usr/bin/env rm -rf /home/app/releases/20160503172831/bin as app@107.191.39.44
+ DEBUG [ac174981] Command: /usr/bin/env rm -rf /home/app/releases/20160503172831/bin
+  INFO [ac174981] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [468dbebc] Running /usr/bin/env ln -s /home/app/shared/bin /home/app/releases/20160503172831/bin as app@107.191.39.44
+ DEBUG [468dbebc] Command: /usr/bin/env ln -s /home/app/shared/bin /home/app/releases/20160503172831/bin
+  INFO [468dbebc] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [c9516333] Running [ -L /home/app/releases/20160503172831/log ] as app@107.191.39.44
+ DEBUG [c9516333] Command: [ -L /home/app/releases/20160503172831/log ]
+ DEBUG [c9516333] Finished in 0.100 seconds with exit status 1 (failed).
+ DEBUG [4f4635b8] Running [ -d /home/app/releases/20160503172831/log ] as app@107.191.39.44
+ DEBUG [4f4635b8] Command: [ -d /home/app/releases/20160503172831/log ]
+ DEBUG [4f4635b8] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [6a3ef3ac] Running /usr/bin/env rm -rf /home/app/releases/20160503172831/log as app@107.191.39.44
+ DEBUG [6a3ef3ac] Command: /usr/bin/env rm -rf /home/app/releases/20160503172831/log
+  INFO [6a3ef3ac] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [12777e3f] Running /usr/bin/env ln -s /home/app/shared/log /home/app/releases/20160503172831/log as app@107.191.39.44
+ DEBUG [12777e3f] Command: /usr/bin/env ln -s /home/app/shared/log /home/app/releases/20160503172831/log
+  INFO [12777e3f] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [c47b5bd5] Running [ -L /home/app/releases/20160503172831/tmp/pids ] as app@107.191.39.44
+ DEBUG [c47b5bd5] Command: [ -L /home/app/releases/20160503172831/tmp/pids ]
+ DEBUG [c47b5bd5] Finished in 0.100 seconds with exit status 1 (failed).
+ DEBUG [225cd3e2] Running [ -d /home/app/releases/20160503172831/tmp/pids ] as app@107.191.39.44
+ DEBUG [225cd3e2] Command: [ -d /home/app/releases/20160503172831/tmp/pids ]
+ DEBUG [225cd3e2] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [accf766b] Running /usr/bin/env rm -rf /home/app/releases/20160503172831/tmp/pids as app@107.191.39.44
+ DEBUG [accf766b] Command: /usr/bin/env rm -rf /home/app/releases/20160503172831/tmp/pids
+  INFO [accf766b] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [237ec499] Running /usr/bin/env ln -s /home/app/shared/tmp/pids /home/app/releases/20160503172831/tmp/pids as app@107.191.39.44
+ DEBUG [237ec499] Command: /usr/bin/env ln -s /home/app/shared/tmp/pids /home/app/releases/20160503172831/tmp/pids
+  INFO [237ec499] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [01c4c0a7] Running [ -L /home/app/releases/20160503172831/tmp/cache ] as app@107.191.39.44
+ DEBUG [01c4c0a7] Command: [ -L /home/app/releases/20160503172831/tmp/cache ]
+ DEBUG [01c4c0a7] Finished in 0.100 seconds with exit status 1 (failed).
+ DEBUG [2bd158b6] Running [ -d /home/app/releases/20160503172831/tmp/cache ] as app@107.191.39.44
+ DEBUG [2bd158b6] Command: [ -d /home/app/releases/20160503172831/tmp/cache ]
+ DEBUG [2bd158b6] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [82076424] Running /usr/bin/env rm -rf /home/app/releases/20160503172831/tmp/cache as app@107.191.39.44
+ DEBUG [82076424] Command: /usr/bin/env rm -rf /home/app/releases/20160503172831/tmp/cache
+  INFO [82076424] Finished in 0.109 seconds with exit status 0 (successful).
+  INFO [6de122a3] Running /usr/bin/env ln -s /home/app/shared/tmp/cache /home/app/releases/20160503172831/tmp/cache as app@107.191.39.44
+ DEBUG [6de122a3] Command: /usr/bin/env ln -s /home/app/shared/tmp/cache /home/app/releases/20160503172831/tmp/cache
+  INFO [6de122a3] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [236562db] Running [ -L /home/app/releases/20160503172831/tmp/sockets ] as app@107.191.39.44
+ DEBUG [236562db] Command: [ -L /home/app/releases/20160503172831/tmp/sockets ]
+ DEBUG [236562db] Finished in 0.100 seconds with exit status 1 (failed).
+ DEBUG [75bc6160] Running [ -d /home/app/releases/20160503172831/tmp/sockets ] as app@107.191.39.44
+ DEBUG [75bc6160] Command: [ -d /home/app/releases/20160503172831/tmp/sockets ]
+ DEBUG [75bc6160] Finished in 0.100 seconds with exit status 1 (failed).
+  INFO [f6a5af10] Running /usr/bin/env ln -s /home/app/shared/tmp/sockets /home/app/releases/20160503172831/tmp/sockets as app@107.191.39.44
+ DEBUG [f6a5af10] Command: /usr/bin/env ln -s /home/app/shared/tmp/sockets /home/app/releases/20160503172831/tmp/sockets
+  INFO [f6a5af10] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [301a6515] Running [ -L /home/app/releases/20160503172831/vendor/bundle ] as app@107.191.39.44
+ DEBUG [301a6515] Command: [ -L /home/app/releases/20160503172831/vendor/bundle ]
+ DEBUG [301a6515] Finished in 0.099 seconds with exit status 1 (failed).
+ DEBUG [de4f08df] Running [ -d /home/app/releases/20160503172831/vendor/bundle ] as app@107.191.39.44
+ DEBUG [de4f08df] Command: [ -d /home/app/releases/20160503172831/vendor/bundle ]
+ DEBUG [de4f08df] Finished in 0.106 seconds with exit status 1 (failed).
+  INFO [69a39050] Running /usr/bin/env ln -s /home/app/shared/vendor/bundle /home/app/releases/20160503172831/vendor/bundle as app@107.191.39.44
+ DEBUG [69a39050] Command: /usr/bin/env ln -s /home/app/shared/vendor/bundle /home/app/releases/20160503172831/vendor/bundle
+  INFO [69a39050] Finished in 0.108 seconds with exit status 0 (successful).
+ DEBUG [1bb5061c] Running [ -L /home/app/releases/20160503172831/public/system ] as app@107.191.39.44
+ DEBUG [1bb5061c] Command: [ -L /home/app/releases/20160503172831/public/system ]
+ DEBUG [1bb5061c] Finished in 0.104 seconds with exit status 1 (failed).
+ DEBUG [03f53ab8] Running [ -d /home/app/releases/20160503172831/public/system ] as app@107.191.39.44
+ DEBUG [03f53ab8] Command: [ -d /home/app/releases/20160503172831/public/system ]
+ DEBUG [03f53ab8] Finished in 0.101 seconds with exit status 1 (failed).
+  INFO [f513acf7] Running /usr/bin/env ln -s /home/app/shared/public/system /home/app/releases/20160503172831/public/system as app@107.191.39.44
+ DEBUG [f513acf7] Command: /usr/bin/env ln -s /home/app/shared/public/system /home/app/releases/20160503172831/public/system
+  INFO [f513acf7] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [6e062fa1] Running [ -L /home/app/releases/20160503172831/public/assets ] as app@107.191.39.44
+ DEBUG [6e062fa1] Command: [ -L /home/app/releases/20160503172831/public/assets ]
+ DEBUG [6e062fa1] Finished in 0.101 seconds with exit status 1 (failed).
+ DEBUG [a17fe640] Running [ -d /home/app/releases/20160503172831/public/assets ] as app@107.191.39.44
+ DEBUG [a17fe640] Command: [ -d /home/app/releases/20160503172831/public/assets ]
+ DEBUG [a17fe640] Finished in 0.101 seconds with exit status 1 (failed).
+  INFO [c3f0879f] Running /usr/bin/env ln -s /home/app/shared/public/assets /home/app/releases/20160503172831/public/assets as app@107.191.39.44
+ DEBUG [c3f0879f] Command: /usr/bin/env ln -s /home/app/shared/public/assets /home/app/releases/20160503172831/public/assets
+  INFO [c3f0879f] Finished in 0.105 seconds with exit status 0 (successful).
+ DEBUG [57545732] Running if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [57545732] Command: if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi
+ DEBUG [57545732] Finished in 0.101 seconds with exit status 0 (successful).
+  INFO [db75bdc8] Running /usr/bin/env bundle install --binstubs /home/app/shared/bin --path /home/app/shared/bundle --without development test --deployment --quiet as app@107.191.39.44
+ DEBUG [db75bdc8] Command: cd /home/app/releases/20160503172831 && /usr/bin/env bundle install --binstubs /home/app/shared/bin --path /home/app/shared/bundle --without development test --deployment --quiet
+  INFO [db75bdc8] Finished in 0.704 seconds with exit status 0 (successful).
+ DEBUG [5a9337b6] Running if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [5a9337b6] Command: if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi
+ DEBUG [5a9337b6] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [e6bc6ed9] Running bundle exec rake assets:precompile as app@107.191.39.44
+ DEBUG [e6bc6ed9] Command: cd /home/app/releases/20160503172831 && ( export RAILS_ENV="production" ; bundle exec rake assets:precompile )
+  INFO [e6bc6ed9] Finished in 2.841 seconds with exit status 0 (successful).
+ DEBUG [323934d7] Running if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [323934d7] Command: if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi
+ DEBUG [323934d7] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [06518053] Running /usr/bin/env mkdir -p /home/app/releases/20160503172831/assets_manifest_backup as app@107.191.39.44
+ DEBUG [06518053] Command: cd /home/app/releases/20160503172831 && /usr/bin/env mkdir -p /home/app/releases/20160503172831/assets_manifest_backup
+  INFO [06518053] Finished in 0.111 seconds with exit status 0 (successful).
+ DEBUG [459b4547] Running /usr/bin/env ls /home/app/releases/20160503172831/public/assets/.sprockets-manifest* as app@107.191.39.44
+ DEBUG [459b4547] Command: cd /home/app/releases/20160503172831 && /usr/bin/env ls /home/app/releases/20160503172831/public/assets/.sprockets-manifest*
+ DEBUG [459b4547] 	/home/app/releases/20160503172831/public/assets/.sprockets-manifest-8581d386fef19c09d58d9b984e16c56f.json
+ DEBUG [459b4547] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [1e7f734b] Running /usr/bin/env ls /home/app/releases/20160503172831/public/assets/.sprockets-manifest* as app@107.191.39.44
+ DEBUG [1e7f734b] Command: cd /home/app/releases/20160503172831 && /usr/bin/env ls /home/app/releases/20160503172831/public/assets/.sprockets-manifest*
+ DEBUG [1e7f734b] 	/home/app/releases/20160503172831/public/assets/.sprockets-manifest-8581d386fef19c09d58d9b984e16c56f.json
+ DEBUG [1e7f734b] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [d6353c6a] Running /usr/bin/env cp /home/app/releases/20160503172831/public/assets/.sprockets-manifest-8581d386fef19c09d58d9b984e16c56f.json /home/app/releases/20160503172831/assets_manifest_backup as app@107.191.39.44
+ DEBUG [d6353c6a] Command: cd /home/app/releases/20160503172831 && /usr/bin/env cp /home/app/releases/20160503172831/public/assets/.sprockets-manifest-8581d386fef19c09d58d9b984e16c56f.json /home/app/releases/20160503172831/assets_manifest_backup
+  INFO [d6353c6a] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [aa8012a0] Running if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [aa8012a0] Command: if test ! -d /home/app/releases/20160503172831; then echo "Directory does not exist '/home/app/releases/20160503172831'" 1>&2; false; fi
+ DEBUG [aa8012a0] Finished in 0.100 seconds with exit status 0 (successful).
+  INFO [e272ed56] Running bundle exec rake db:migrate as app@107.191.39.44
+ DEBUG [e272ed56] Command: cd /home/app/releases/20160503172831 && ( export RAILS_ENV="production" ; bundle exec rake db:migrate )
+  INFO [e272ed56] Finished in 2.964 seconds with exit status 0 (successful).
+  INFO [343418f5] Running /usr/bin/env ln -s /home/app/releases/20160503172831 /home/app/releases/current as app@107.191.39.44
+ DEBUG [343418f5] Command: /usr/bin/env ln -s /home/app/releases/20160503172831 /home/app/releases/current
+  INFO [343418f5] Finished in 0.103 seconds with exit status 0 (successful).
+  INFO [14669f72] Running /usr/bin/env mv /home/app/releases/current /home/app as app@107.191.39.44
+ DEBUG [14669f72] Command: /usr/bin/env mv /home/app/releases/current /home/app
+  INFO [14669f72] Finished in 0.102 seconds with exit status 0 (successful).
+ DEBUG [232bb162] Running /usr/bin/env ls -xtr /home/app/releases as app@107.191.39.44
+ DEBUG [232bb162] Command: /usr/bin/env ls -xtr /home/app/releases
+ DEBUG [232bb162] 	20160503025122	20160503025747	20160503172831
+ DEBUG [232bb162] Finished in 0.104 seconds with exit status 0 (successful).
+  INFO Keeping 2 of 3 deployed releases on 107.191.39.44
+  INFO [1eba855d] Running /usr/bin/env rm -rf /home/app/releases/20160503025122 as app@107.191.39.44
+ DEBUG [1eba855d] Command: /usr/bin/env rm -rf /home/app/releases/20160503025122
+  INFO [1eba855d] Finished in 0.108 seconds with exit status 0 (successful).
+ DEBUG [53b842c0] Running if test ! -d /home/app/releases; then echo "Directory does not exist '/home/app/releases'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [53b842c0] Command: if test ! -d /home/app/releases; then echo "Directory does not exist '/home/app/releases'" 1>&2; false; fi
+ DEBUG [53b842c0] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [d349d443] Running /usr/bin/env echo "Branch master (at 86e8c9dfae20625aad4bb3a085caa3bef7fc35a4) deployed as release 20160503172831 by aether" >> /home/app/revisions.log as app@107.191.39.44
+ DEBUG [d349d443] Command: cd /home/app/releases && /usr/bin/env echo "Branch master (at 86e8c9dfae20625aad4bb3a085caa3bef7fc35a4) deployed as release 20160503172831 by aether" >> /home/app/revisions.log
+  INFO [d349d443] Finished in 0.103 seconds with exit status 0 (successful).
+ DEBUG [36d61e33] Running if test ! -d /home/app/current; then echo "Directory does not exist '/home/app/current'" 1>&2; false; fi as app@107.191.39.44
+ DEBUG [36d61e33] Command: if test ! -d /home/app/current; then echo "Directory does not exist '/home/app/current'" 1>&2; false; fi
+ DEBUG [36d61e33] Finished in 0.099 seconds with exit status 0 (successful).
+ DEBUG [3c7085f9] Running [ -f /home/app/shared/tmp/pids/puma.pid ] as app@107.191.39.44
+ DEBUG [3c7085f9] Command: [ -f /home/app/shared/tmp/pids/puma.pid ]
+ DEBUG [3c7085f9] Finished in 0.100 seconds with exit status 0 (successful).
+ DEBUG [d9b9ea61] Running kill -0 $( cat /home/app/shared/tmp/pids/puma.pid ) as app@107.191.39.44
+ DEBUG [d9b9ea61] Command: kill -0 $( cat /home/app/shared/tmp/pids/puma.pid )
+ DEBUG [d9b9ea61] Finished in 0.106 seconds with exit status 0 (successful).
+  INFO [e5a871f8] Running /usr/bin/env bundle exec pumactl -S /home/app/shared/tmp/pids/puma.state restart as app@107.191.39.44
+ DEBUG [e5a871f8] Command: cd /home/app/current && ( export RACK_ENV="production" ; /usr/bin/env bundle exec pumactl -S /home/app/shared/tmp/pids/puma.state restart )
+ DEBUG [e5a871f8] 	Command restart sent success
+ DEBUG [e5a871f8] 	
+  INFO [e5a871f8] Finished in 0.823 seconds with exit status 0 (successful).

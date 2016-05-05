@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  headers: MyString
+  url: MyString
+  hostname: MyString
+  formdata: MyString
+  method: MyString
+  guid: MyString
+
+two:
+  headers: MyString
+  url: MyString
+  hostname: MyString
+  formdata: MyString
+  method: MyString
+  guid: MyString

@@ -8,5 +8,7 @@
     .col-lg-6
       h3 Top 10 Honeypots
       = render 'honeypots/list', honeypots: Honeypot.top
+      h3 Last 25 Proxy Requests
+      = render 'http_requests/latest', requests: HttpRequest.latest
       h3 Last 25 Sessions
       = render 'logins/latest_sessions', logins: Login.latest_sessions
