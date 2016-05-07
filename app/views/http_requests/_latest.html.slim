@@ -8,6 +8,6 @@ table.table.table-striped.table-condensed
     - requests.each do |req|
       tr
         td = link_to req.login.try(:username), logins_path(username: req.login.try(:username))
-        td = link_to req.login.try(:remote_addr), logins_path(ip: req.login.try(:remote_addr)
+        td = link_to req.login.try(:remote_addr), logins_path(ip: req.login.try(:remote_addr))
         td = req.url
         td = req.created_at.strftime("%Y/%m/%d %H:%M")
