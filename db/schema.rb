@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505025835) do
+ActiveRecord::Schema.define(version: 20160514022534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160505025835) do
     t.string   "guid"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "response"
   end
 
   add_index "http_requests", ["guid"], name: "index_http_requests_on_guid", using: :btree
