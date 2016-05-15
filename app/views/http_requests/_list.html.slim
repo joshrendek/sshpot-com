@@ -1,0 +1,19 @@
+table.table.table-striped.table-condensed
+  thead
+    th
+    th Username
+    th IP
+    th URL
+    th Method
+    th Country
+    th Date
+  tbody
+    - requests.each do |request|
+      tr
+        td = link_to 'View', request
+        td = link_to request.try(:login).try(:username), logins_path(username: request.try(:login).try(:username))
+        td = request.try(:login).try(:remote_addr)
+        td = request.url
+        td = request.method
+        td = request.try(:login).try(:country_name)
+        td = request.created_at.strftime("%Y/%m/%d %H:%M")

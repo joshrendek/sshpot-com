@@ -29078,3 +29078,147 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+  [1m[36mHoneypot Load (0.7ms)[0m  [1mSELECT "honeypots".* FROM "honeypots"[0m
+  [1m[35mHoneypot Load (0.9ms)[0m  SELECT  "honeypots".* FROM "honeypots"  ORDER BY "honeypots"."id" DESC LIMIT 1
+  [1m[36mHoneypot Load (0.5ms)[0m  [1mSELECT  "honeypots".* FROM "honeypots"  ORDER BY "honeypots"."id" DESC LIMIT 1[0m
+  [1m[35mHoneypot Load (0.5ms)[0m  SELECT  "honeypots".* FROM "honeypots"  ORDER BY "honeypots"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (0.8ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mLogin Load (12.1ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (0.5ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.7ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (0.6ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (0.6ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.5ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (1.6ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (0.6ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (2.2ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (2.1ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (0.5ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (4.7ms)[0m  [1mSELECT "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC[0m
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  [1m[36mHttpRequest Load (0.6ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" ASC LIMIT 1[0m
+  [1m[35mHttpRequest Load (0.6ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+
+
+Started POST "/api/http_requests" for ::1 at 2016-05-14 23:49:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::HttpRequestsController#create as HTML
+  Parameters: {"{\"headers\":{\"Accept\":"=>{"\"*/*\""=>{",\"Content-Length\":"=>{"\"23\""=>{",\"Content-Type\":"=>{"\"application/x-www-form-urlencoded\""=>{",\"User-Agent\":"=>{"\"curl/7.43.0\""=>{"},\"url\":\"ip-api.com/json\",\"form_data\":{\"t\":"=>{"\"1\""=>{",\"t2\":"=>{"\"2\""=>{",\"t3\":"=>{"\"3\""=>{",\"t4\":"=>{"\"4\""=>{",\"t5\":"=>{"\"5\""=>{"},\"method\":\"POST\",\"guid\":\"ee034526-e252-4a82-935f-0d16a7fdddd8\",\"hostname\":\"ip-api.com\",\"response\":\"{\\\"as\\\":\\\"AS5650 Frontier Communications of America, Inc.\\\",\\\"city\\\":\\\"Clearwater\\\",\\\"country\\\":\\\"United States\\\",\\\"countryCode\\\":\\\"US\\\",\\\"isp\\\":\\\"Verizon Fios\\\",\\\"lat\\\":27.9447,\\\"lon\\\":-82.7943,\\\"org\\\":\\\"Verizon Fios\\\",\\\"query\\\":\\\"96.228.244.140\\\",\\\"region\\\":\\\"FL\\\",\\\"regionName\\\":\\\"Florida\\\",\\\"status\\\":\\\"success\\\",\\\"timezone\\\":\\\"America/New_York\\\",\\\"zip\\\":\\\"33756\\\"}\"}"=>nil}}}}}}}}}}}}}}}}}}}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "http_requests" ("url", "response", "hostname", "headers", "formdata", "method", "guid", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["url", "ip-api.com/json"], ["response", "{\"as\":\"AS5650 Frontier Communications of America, Inc.\",\"city\":\"Clearwater\",\"country\":\"United States\",\"countryCode\":\"US\",\"isp\":\"Verizon Fios\",\"lat\":27.9447,\"lon\":-82.7943,\"org\":\"Verizon Fios\",\"query\":\"96.228.244.140\",\"region\":\"FL\",\"regionName\":\"Florida\",\"status\":\"success\",\"timezone\":\"America/New_York\",\"zip\":\"33756\"}"], ["hostname", "ip-api.com"], ["headers", "{\"Accept: */*\",\"Content-Length: 23\",\"Content-Type: application/x-www-form-urlencoded\",\"User-Agent: curl/7.43.0\"}"], ["formdata", "{\"{\\\"t\\\"=>\\\"1\\\"}\",\"{\\\"t2\\\"=>\\\"2\\\"}\",\"{\\\"t3\\\"=>\\\"3\\\"}\",\"{\\\"t4\\\"=>\\\"4\\\"}\",\"{\\\"t5\\\"=>\\\"5\\\"}\"}"], ["method", "POST"], ["guid", "ee034526-e252-4a82-935f-0d16a7fdddd8"], ["created_at", "2016-05-15 03:49:13.398103"], ["updated_at", "2016-05-15 03:49:13.398103"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 200 OK in 25ms (Views: 0.5ms | ActiveRecord: 6.8ms)
+  [1m[36mHttpRequest Load (0.5ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+
+
+Started GET "/http_requests" for ::1 at 2016-05-14 23:49:26 -0400
+Processing by HttpRequestsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "http_requests"[0m
+  [1m[35mHttpRequest Load (1.0ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 25 OFFSET 0
+  [1m[36mLogin Load (1.1ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "ee034526-e252-4a82-935f-0d16a7fdddd8"]]
+  [1m[35mLogin Load (0.4ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "e7dea714-68f7-41ef-825d-310949f5e0ae"]]
+  Rendered http_requests/_list.html.slim (57.7ms)
+  Rendered http_requests/index.html.slim within layouts/application (139.1ms)
+  Rendered layouts/_navigation_links.html.slim (4.0ms)
+  Rendered layouts/_navigation.html.slim (15.2ms)
+  Rendered layouts/_messages.html.slim (4.5ms)
+Completed 200 OK in 3666ms (Views: 3660.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/http_requests/77" for ::1 at 2016-05-14 23:49:33 -0400
+Processing by HttpRequestsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[35mHttpRequest Load (0.4ms)[0m  SELECT  "http_requests".* FROM "http_requests" WHERE "http_requests"."id" = $1 LIMIT 1  [["id", 77]]
+  [1m[36mLogin Load (0.5ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "ee034526-e252-4a82-935f-0d16a7fdddd8"]]
+  [1m[35mHttpRequest Load (0.5ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  Rendered http_requests/show.html.slim within layouts/application (14.0ms)
+  Rendered layouts/_navigation_links.html.slim (0.1ms)
+  Rendered layouts/_navigation.html.slim (1.4ms)
+  Rendered layouts/_messages.html.slim (0.1ms)
+Completed 200 OK in 115ms (Views: 106.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/http_requests/77" for ::1 at 2016-05-14 23:50:08 -0400
+Processing by HttpRequestsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mHttpRequest Load (0.4ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests" WHERE "http_requests"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mLogin Load (0.3ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "ee034526-e252-4a82-935f-0d16a7fdddd8"]]
+  [1m[36mHttpRequest Load (0.5ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  Rendered http_requests/show.html.slim within layouts/application (15.2ms)
+  Rendered layouts/_navigation_links.html.slim (0.1ms)
+  Rendered layouts/_navigation.html.slim (2.0ms)
+  Rendered layouts/_messages.html.slim (0.1ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/http_requests/77" for ::1 at 2016-05-14 23:50:36 -0400
+Processing by HttpRequestsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[35mHttpRequest Load (0.3ms)[0m  SELECT  "http_requests".* FROM "http_requests" WHERE "http_requests"."id" = $1 LIMIT 1  [["id", 77]]
+  [1m[36mLogin Load (0.4ms)[0m  [1mSELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1[0m  [["guid", "ee034526-e252-4a82-935f-0d16a7fdddd8"]]
+  [1m[35mHttpRequest Load (0.5ms)[0m  SELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1
+  Rendered http_requests/show.html.slim within layouts/application (10.9ms)
+  Rendered layouts/_navigation_links.html.slim (0.1ms)
+  Rendered layouts/_navigation.html.slim (1.1ms)
+  Rendered layouts/_messages.html.slim (0.0ms)
+Completed 200 OK in 65ms (Views: 62.2ms | ActiveRecord: 1.2ms)
+  [1m[35mHoneypot Load (0.6ms)[0m  SELECT  "honeypots".* FROM "honeypots"  ORDER BY "honeypots"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT "honeypots"."ip" FROM "honeypots"[0m
+  [1m[35m (0.4ms)[0m  SELECT "honeypots"."ip" FROM "honeypots"
+
+
+Started GET "/http_requests/77" for ::1 at 2016-05-14 23:52:14 -0400
+Processing by HttpRequestsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mHttpRequest Load (0.4ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests" WHERE "http_requests"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mLogin Load (0.4ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "ee034526-e252-4a82-935f-0d16a7fdddd8"]]
+  [1m[36mHttpRequest Load (0.5ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT "honeypots"."ip" FROM "honeypots"
+  Rendered http_requests/show.html.slim within layouts/application (16.0ms)
+  Rendered layouts/_navigation_links.html.slim (0.1ms)
+  Rendered layouts/_navigation.html.slim (1.7ms)
+  Rendered layouts/_messages.html.slim (0.1ms)
+Completed 200 OK in 110ms (Views: 83.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/http_requests/77" for ::1 at 2016-05-14 23:52:19 -0400
+Processing by HttpRequestsController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mHttpRequest Load (0.3ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests" WHERE "http_requests"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mLogin Load (0.2ms)[0m  SELECT  "logins".* FROM "logins" WHERE "logins"."guid" = $1 LIMIT 1  [["guid", "ee034526-e252-4a82-935f-0d16a7fdddd8"]]
+  [1m[36mHttpRequest Load (0.5ms)[0m  [1mSELECT  "http_requests".* FROM "http_requests"  ORDER BY "http_requests"."id" DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT "honeypots"."ip" FROM "honeypots"
+  Rendered http_requests/show.html.slim within layouts/application (5.0ms)
+  Rendered layouts/_navigation_links.html.slim (0.1ms)
+  Rendered layouts/_navigation.html.slim (1.4ms)
+  Rendered layouts/_messages.html.slim (0.1ms)
+Completed 200 OK in 79ms (Views: 59.9ms | ActiveRecord: 5.7ms)

@@ -1,0 +1,45 @@
+h2 Proxy Request Viewer
+.row
+  .col-lg-4
+    h4 Session Details
+    table.table.table-striped.table-condensed
+      tr
+        td Username
+        td = @login.try(:username)
+      tr
+        td Password
+        td = @login.try(:password)
+      tr
+        td IP
+        td = @login.try(:remote_addr)
+      tr
+        td Country
+        td = @login.try(:country_name)
+      tr
+        td Client Version
+        td = @login.try(:client_version)
+
+  .col-lg-8
+    h4 Request Details
+    .row
+      .col-lg-6
+        h5 Headers
+        table.table.table-striped.table-condensed
+          - @request.headers.each do |header|
+            - x = header.split(":").map(&:strip)
+            tr
+              td = x[0]
+              td = x[1]
+      .col-lg-6
+        h5 Form Data
+        table.table.table-striped.table-condensed
+          - formdata = HttpRequest.last.formdata
+          - formdata.each do |fd|
+            tr
+              td
+                pre = fd
+
+.row
+  .col-lg-12
+    h4 Proxied Response
+    pre = @request.filtered_response
