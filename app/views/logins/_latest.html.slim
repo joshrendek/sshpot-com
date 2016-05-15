@@ -6,8 +6,24 @@
       h3 Latest 25 Logins
       = render 'logins/list', logins: Login.latest
     .col-lg-6
-      h3 Top 10 Honeypots
-      = render 'honeypots/list', honeypots: Honeypot.top
+      h3 Network Stats
+      .row
+        .col-lg-3
+          .alert.alert-primary.text-center
+            h3 = Honeypot.count
+            div honeypots
+        .col-lg-3
+          .alert.alert-primary.text-center
+            h3 = LoginCount.count
+            div unique attackers
+        .col-lg-3
+          .alert.alert-primary.text-center
+            h3 = Login.count
+            div logins
+        .col-lg-3
+          .alert.alert-primary.text-center
+            h3 = HttpRequest.count
+            div proxied requests
       h3 Last 25 Proxy Requests
       = render 'http_requests/latest', requests: HttpRequest.latest
       h3 Last 25 Sessions
