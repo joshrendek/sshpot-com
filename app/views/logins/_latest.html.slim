@@ -10,19 +10,19 @@
       .row
         .col-lg-3
           .alert.alert-primary.text-center
-            h3 = Honeypot.count
+            h3 = number_with_delimiter Honeypot.count
             div honeypots
         .col-lg-3
           .alert.alert-primary.text-center
-            h3 = LoginCount.count
+            h3 = number_with_delimiter LoginCount.count
             div unique attackers
         .col-lg-3
           .alert.alert-primary.text-center
-            h3 = Login.count
+            h3 = number_with_delimiter Login.count
             div logins
         .col-lg-3
           .alert.alert-primary.text-center
-            h3 = HttpRequest.count
+            h3 = number_with_delimiter HttpRequest.count
             div proxied requests
       h3 Last 25 Proxy Requests
       = render 'http_requests/latest', requests: HttpRequest.latest
