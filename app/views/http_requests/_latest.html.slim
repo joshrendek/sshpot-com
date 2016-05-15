@@ -1,5 +1,6 @@
 table.table.table-striped.table-condensed
   thead
+    th
     th Username
     th IP
     th URL
@@ -7,6 +8,7 @@ table.table.table-striped.table-condensed
   tbody
     - requests.each do |req|
       tr
+        td = link_to 'view', req
         td = link_to req.login.try(:username), logins_path(username: req.login.try(:username))
         td = link_to req.login.try(:remote_addr), logins_path(ip: req.login.try(:remote_addr))
         td = req.url
