@@ -11,6 +11,7 @@ gem 'chartkick'
 gem 'geoip'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'oj'
 
 group :development, :test do
   gem 'byebug'
