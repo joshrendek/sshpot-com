@@ -1,8 +1,6 @@
 .container
   .row
     .col-lg-6
-      h3 Top 10 Attackers
-      = render 'login_counter/top', logins: LoginCount.top
       h3 Latest 25 Logins
       = render 'logins/list', logins: Login.latest
     .col-lg-6
