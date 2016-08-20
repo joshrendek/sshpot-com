@@ -16,6 +16,6 @@ class Login < ActiveRecord::Base
   end
 
   def self.latest_sessions
-    joins(:commands).group('logins.id').having('count(commands.id) > 0').order(id: :desc)
+    joins(:commands).group('logins.id').having('count(commands.id) > 0').order(id: :desc).limit(25)
   end
 end
