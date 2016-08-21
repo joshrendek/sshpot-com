@@ -5,7 +5,8 @@ table.table.table-striped.table-condensed
     th Commands
   tbody
     - logins.each do |login|
-      tr
-        td = link_to login.ip, logins_path(ip: login.ip)
-        td = login.sessions.count
-        td = login.commands.count
+      - cache login do
+        tr
+          td = link_to login.ip, logins_path(ip: login.ip)
+          td = login.sessions.count
+          td = login.commands.count
