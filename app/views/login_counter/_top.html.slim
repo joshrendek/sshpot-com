@@ -5,7 +5,7 @@ table.table.table-striped.table-condensed
     th Commands
   tbody
     - logins.each do |login|
-      - cache login do
+      - cache(login, expires_in: 1.hour) do
         tr
           td = link_to login.ip, logins_path(ip: login.ip)
           td = login.sessions.count
