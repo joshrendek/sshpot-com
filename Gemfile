@@ -11,6 +11,7 @@ gem 'geoip'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'oj'
+gem 'dalli'
 
 group :development, :test do
   gem 'byebug'
